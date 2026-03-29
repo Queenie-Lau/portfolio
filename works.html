@@ -5,138 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Works - Queenie Lau</title>
     <link rel="stylesheet" href="styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="js/3d-cursor.js"></script>
+    <script type="module" src="js/binary-trail.js"></script>
   </head>
   <body>
     <header class="header">
       <nav class="navbar">
-        <div class="logo">qlau</div>
+        <div class="logo">
+          <a class="home-logo-nav" href="index.html">qlau</a>
+        </div>
         <ul class="nav-links">
           <li><a href="works.html" class="active">Works</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <div class="works-container">
-        <div class="works-header">
-          <h1>My Work</h1>
+      <main class="works-container">
+        <div class="works-nav">
+          <a href="code.html" class="works-item">
+            <h2 class="works-title">I DREAM IN CODE</h2>
+            <span class="works-vol">VOL 1</span>
+          </a>
+
+          <a href="photo.html" class="works-item">
+            <h2 class="works-title">I DREAM IN PHOTO</h2>
+            <span class="works-vol">VOL 2</span>
+          </a>
+
+          <a href="video.html" class="works-item">
+            <h2 class="works-title">I DREAM IN VIDEO</h2>
+            <span class="works-vol">VOL 3</span>
+          </a>
         </div>
-
-        <div class="works-grid">
-          <div class="work-item">
-            <div class="work-image"><!-- Project image --></div>
-            <div class="work-info">
-              <div class="work-category">Web Design</div>
-              <h3>I Dream in Code</h3>
-              <p class="work-description">
-                A comprehensive web design project showcasing modern design
-                principles and responsive layout techniques.
-              </p>
-              <div class="work-tags">
-                <span class="work-tag">Design</span>
-                <span class="work-tag">Web</span>
-                <span class="work-tag">UI</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="work-item">
-            <div class="work-image"><!-- Project image --></div>
-            <div class="work-info">
-              <div class="work-category">Frontend Development</div>
-              <h3>I Dream in Photo</h3>
-              <p class="work-description">
-                A fully functional web application built with modern frameworks
-                and interactive user interfaces.
-              </p>
-              <div class="work-tags">
-                <span class="work-tag">React</span>
-                <span class="work-tag">JavaScript</span>
-                <span class="work-tag">Dev</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="work-item">
-            <div class="work-image"><!-- Project image --></div>
-            <div class="work-info">
-              <div class="work-category">UI/UX Design</div>
-              <h3>I Dream in Film</h3>
-              <p class="work-description">
-                An intricate user experience design focused on accessibility and
-                user-centered design principles.
-              </p>
-              <div class="work-tags">
-                <span class="work-tag">UX</span>
-                <span class="work-tag">Design</span>
-                <span class="work-tag">Figma</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="work-item">
-            <div class="work-image"><!-- Project image --></div>
-            <div class="work-info">
-              <div class="work-category">Full Stack Development</div>
-              <h3>Project Four</h3>
-              <p class="work-description">
-                End-to-end web application development combining frontend polish
-                with robust backend architecture.
-              </p>
-              <div class="work-tags">
-                <span class="work-tag">Full Stack</span>
-                <span class="work-tag">Backend</span>
-                <span class="work-tag">Dev</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="work-item">
-            <div class="work-image"><!-- Project image --></div>
-            <div class="work-info">
-              <div class="work-category">Animation & Motion</div>
-              <h3>Project Five</h3>
-              <p class="work-description">
-                Creative motion design and animations that bring web experiences
-                to life with smooth, engaging interactions.
-              </p>
-              <div class="work-tags">
-                <span class="work-tag">Animation</span>
-                <span class="work-tag">Motion</span>
-                <span class="work-tag">CSS</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="work-item">
-            <div class="work-image"><!-- Project image --></div>
-            <div class="work-info">
-              <div class="work-category">Branding & Design</div>
-              <h3>Project Six</h3>
-              <p class="work-description">
-                Complete branding solutions from logo design to comprehensive
-                visual identity systems.
-              </p>
-              <div class="work-tags">
-                <span class="work-tag">Branding</span>
-                <span class="work-tag">Identity</span>
-                <span class="work-tag">Design</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </main>
     </main>
 
     <footer class="footer">
-      <p>&copy; 2026 Queenie Lau</p>
-      <div class="social-links">
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
-        <a href="#">Email</a>
+      <div class="footer-container">
+        <h1 id="footer-logo">QUEENIE</h1>
+        <pre id="footer-lotus">
+          ⠀⠀⠀⠀⠀⠀⣴⣿⣷⢦⢄⣴⡗⢢⢄⠀⠀⠀⠀⣀⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢧⠁⠗⠯⠀⣉⠲⢈⠂⢑⣤⣶⡿⢻⠛⡗⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣷⡦⣰⡟⠟⡄⠆⣤⣾⣾⣿⣾⡼⠟⢹⢸⣾⡜⡀⠁⠈⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢠⣤⣄⢀⣀⡀⢸⡼⡟⢻⣗⢀⣣⣾⣿⣿⣿⣿⣿⣆⠉⡝⠠⢐⢁⣥⠶⠪⡝⠉⠙⣷⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠸⣿⣓⣌⡂⠀⢹⡇⢻⣿⡟⢳⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⣆⢼⠟⠁⠀⢰⢿⡀⣸⣽⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠹⣿⣚⠷⢺⢾⣇⡯⣿⡇⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡞⣏⠀⠀⢀⠄⢀⣧⣾⡿⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠻⣿⢆⠢⠑⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⠀⠀⠈⠠⣿⣿⣿⣃⣀⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⣀⣙⣦⣀⣠⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⢀⣾⣷⣿⠏⠀⠀⡀⠉⠓⠠⢄⡀⠀
+⣤⣤⡶⠶⠋⡝⣵⣿⣿⣷⣮⡙⠢⢽⣿⣿⣿⠿⡿⠿⡿⢿⣿⣿⣿⣿⣿⣟⣀⢀⣿⣿⡿⠋⠀⠀⠀⠀⠈⡀⢄⣾⣾⠆
+⠙⠿⣿⣶⡵⡀⠚⢿⣿⣿⣿⣿⣶⣀⠉⢻⣿⣾⡞⡜⡱⣳⢻⣼⡛⣿⣿⣿⢼⣿⠟⠋⠀⠉⠢⢄⠀⠊⠁⠢⠄⣺⠏⠀
+⠀⠀⠈⠛⠷⣦⡤⣤⣝⣺⣮⡭⣿⣿⣿⣿⣿⣿⣿⣧⣿⡇⣼⣸⣿⣿⣿⣿⣏⠀⠁⠀⠀⠀⠀⠈⢆⠈⠠⣠⠞⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠉⠓⠂⠨⠭⠿⡿⠿⠿⠿⠿⠛⠛⠋⠛⠛⠻⠿⢷⡟⠋⠁⠀⠀⠀⠀⠀⠀⢀⡤⠈⣦⠚⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡷⠀⠀⠀⠀⠀⠀⠐⠚⠛⠁⠈⣺⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣦⡀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠞⠑⠬⣄⡀⠀⠀⠀⠀⠀⠀⣴⡿⠟⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣦⣤⣠⣤⣴⠶⠟⠋⠁⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        </pre>
+        <div class="footer-nav-links">
+          <a href="index.html">✷ Home</a>
+          <a href="works.html">✷ Works</a>
+          <a href="about.html">✷ About</a>
+          <a href="contact.html">✷ Contact</a>
+        </div>
       </div>
+
+      <!-- <ul id="footer-nav-buttons">
+        <a href="#">Instagram</a>
+        <a href="#">Email</a>
+      </ul> -->
+
+      <p id="back-to-top">
+        <a href="index.html">BACK TO THE TOP</a>
+      </p>
     </footer>
   </body>
 </html>

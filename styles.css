@@ -53,6 +53,11 @@ button {
 }
 
 
+.logo a {
+    text-decoration: none;
+    color: var(--text-white);
+}
+
 body {
     font-family: var(--font-sans);
     color: var(--text-white);
@@ -444,7 +449,7 @@ input:checked+.slider:before {
 .footer {
     background-color: var(--text-white);
     color: var(--primary-red);
-    padding: 3rem 5rem;
+    padding: 2rem 2rem;
 }
 
 .footer p {
@@ -472,7 +477,7 @@ input:checked+.slider:before {
 .footer-container {
     display: flex;
     flex-direction: row;
-    gap: 30%;
+    gap: 5rem;
     text-align: center;
 }
 
@@ -486,6 +491,11 @@ input:checked+.slider:before {
     font-weight: 400;
     letter-spacing: -1px;
     text-transform: uppercase;
+}
+
+#footer-lotus {
+    white-space: pre;
+    font-size: 0rem;
 }
 
 #footer-nav-buttons {
@@ -953,6 +963,11 @@ input:checked+.slider:before {
     justify-content: center;
     padding-left: 40%;
     padding-right: 40%;
+    margin-top: 5%;
+}
+
+#back-to-top p {
+    margin: 0;
 }
 
 #back-to-top a {
@@ -963,6 +978,189 @@ input:checked+.slider:before {
 #back-to-top a:hover {
     text-decoration: none;
     font-weight: 700;
+}
+
+.about-image {
+    background-image: url('assets/about-page.png');
+    width: 100vw;
+    height: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--primary-red);
+}
+
+.contact-image {
+    height: 100px;
+    transform: translateY(20px);
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 3rem;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.contact-section {
+    flex: 1;
+    text-align: left;
+    padding: 2rem;
+    margin: 5%;
+}
+
+#contact-title-together {
+    font-size: 10rem;
+    line-height: 0.5;
+    color: var(--text-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px rgba(255, 180, 80, 0.15);
+}
+
+.contact-info {
+    margin-top: 10%;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: var(--secondary-white);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#get-in-touch-text {
+    color: var(--secondary-white);
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 2%;
+}
+
+/* Container setup */
+.works-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+}
+
+.works-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Individual Item Styling */
+.works-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    text-decoration: none;
+    color: var(--text-white);
+}
+
+.works-title {
+    font-family: var(--font-serif);
+    /* Perandory */
+    font-size: 5.5rem;
+    line-height: 1;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.works-vol {
+    font-family: var(--font-sans);
+    /* Pragmatica */
+    font-weight: 700;
+    font-size: 1.2rem;
+    opacity: 0.6;
+}
+
+/* The Hover Logic: 
+   When the container is hovered, dim ALL items. 
+   Then, keep the specifically hovered item at full opacity. */
+
+.works-nav:hover .works-item {
+    opacity: 0.2;
+    /* Lower opacity for non-hovered items */
+    filter: blur(2px);
+    /* Optional: adds a dreamy vibe */
+}
+
+.works-nav .works-item:hover {
+    opacity: 1;
+    filter: blur(0px);
+    border-bottom-color: rgba(255, 255, 255, 0.8);
+    transform: translateX(20px);
+    /* Subtle slide-right effect */
+}
+
+/* 1. Scaling the Text on Hover */
+.works-item:hover .works-title {
+    transform: scale(1.05);
+    /* Subtle grow */
+    letter-spacing: 4px;
+    /* Expands slightly for a 'breathing' effect */
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10;
+}
+
+/* 2. The Interactive Vignette Container */
+#vignette-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    /* Don't block clicks */
+    z-index: 5;
+    /* Sit behind the text but above the background */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    /* This creates a 'hole' of light where the mouse is */
+    background: radial-gradient(circle 200px at var(--mouse-x) var(--mouse-y),
+            rgba(173, 17, 2, 0) 0%,
+            rgba(173, 17, 2, 0.4) 100%);
+}
+
+.works-nav:hover~#vignette-layer {
+    opacity: 1;
+}
+
+.trail-particle {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    transition: filter 0.2s;
+}
+
+.heart-particle {
+    position: fixed;
+    pointer-events: none;
+    font-family: monospace;
+    z-index: 9999;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.4);
+    user-select: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .works-title {
+        font-size: 2.5rem;
+    }
+
+    .works-item:hover {
+        transform: none;
+    }
 }
 
 /* Responsive Design */

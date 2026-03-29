@@ -5,75 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - Queenie Lau</title>
     <link rel="stylesheet" href="styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="js/3d-cursor.js"></script>
   </head>
   <body>
     <header class="header">
       <nav class="navbar">
-        <div class="logo">qlau</div>
+        <div class="logo">
+          <a class="home-logo-nav" href="index.html">qlau</a>
+        </div>
         <ul class="nav-links">
           <li><a href="works.html">Works</a></li>
           <li><a href="about.html" class="active">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <div class="about-container">
-        <div class="about-header">
-          <h1>About Me</h1>
-        </div>
-
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              I'm Queenie Lau, a creative developer and designer passionate
-              about building beautiful, functional digital experiences. With a
-              background in both design and development, I bring a unique
-              perspective to every project.
-            </p>
-
-            <p>
-              I specialize in crafting elegant solutions that merge aesthetic
-              design with robust technical implementation. My work spans web
-              design, frontend development, and interactive experiences.
-            </p>
-
-            <p>
-              When I'm not designing or coding, I'm exploring new technologies,
-              contributing to creative projects, or sketching ideas for the next
-              big venture.
-            </p>
-
-            <div class="skills-section">
-              <h2>Skills & Expertise</h2>
-              <div class="skills-grid">
-                <div class="skill-tag">Web Design</div>
-                <div class="skill-tag">Frontend Dev</div>
-                <div class="skill-tag">UI/UX</div>
-                <div class="skill-tag">JavaScript</div>
-                <div class="skill-tag">React</div>
-                <div class="skill-tag">CSS</div>
-                <div class="skill-tag">HTML5</div>
-                <div class="skill-tag">Figma</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="about-image">
-            <!-- Profile image placeholder -->
-          </div>
-        </div>
-      </div>
+      <div class="about-image"></div>
     </main>
 
     <footer class="footer">
-      <p>&copy; 2026 Queenie Lau</p>
-      <div class="social-links">
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
-        <a href="#">Email</a>
+      <div class="footer-container">
+        <h1 id="footer-logo">QUEENIE</h1>
+        <pre id="footer-lotus">
+          ⠀⠀⠀⠀⠀⠀⣴⣿⣷⢦⢄⣴⡗⢢⢄⠀⠀⠀⠀⣀⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢧⠁⠗⠯⠀⣉⠲⢈⠂⢑⣤⣶⡿⢻⠛⡗⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣷⡦⣰⡟⠟⡄⠆⣤⣾⣾⣿⣾⡼⠟⢹⢸⣾⡜⡀⠁⠈⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢠⣤⣄⢀⣀⡀⢸⡼⡟⢻⣗⢀⣣⣾⣿⣿⣿⣿⣿⣆⠉⡝⠠⢐⢁⣥⠶⠪⡝⠉⠙⣷⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠸⣿⣓⣌⡂⠀⢹⡇⢻⣿⡟⢳⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⣆⢼⠟⠁⠀⢰⢿⡀⣸⣽⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠹⣿⣚⠷⢺⢾⣇⡯⣿⡇⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡞⣏⠀⠀⢀⠄⢀⣧⣾⡿⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠻⣿⢆⠢⠑⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⠀⠀⠈⠠⣿⣿⣿⣃⣀⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⣀⣙⣦⣀⣠⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⢀⣾⣷⣿⠏⠀⠀⡀⠉⠓⠠⢄⡀⠀
+⣤⣤⡶⠶⠋⡝⣵⣿⣿⣷⣮⡙⠢⢽⣿⣿⣿⠿⡿⠿⡿⢿⣿⣿⣿⣿⣿⣟⣀⢀⣿⣿⡿⠋⠀⠀⠀⠀⠈⡀⢄⣾⣾⠆
+⠙⠿⣿⣶⡵⡀⠚⢿⣿⣿⣿⣿⣶⣀⠉⢻⣿⣾⡞⡜⡱⣳⢻⣼⡛⣿⣿⣿⢼⣿⠟⠋⠀⠉⠢⢄⠀⠊⠁⠢⠄⣺⠏⠀
+⠀⠀⠈⠛⠷⣦⡤⣤⣝⣺⣮⡭⣿⣿⣿⣿⣿⣿⣿⣧⣿⡇⣼⣸⣿⣿⣿⣿⣏⠀⠁⠀⠀⠀⠀⠈⢆⠈⠠⣠⠞⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠉⠓⠂⠨⠭⠿⡿⠿⠿⠿⠿⠛⠛⠋⠛⠛⠻⠿⢷⡟⠋⠁⠀⠀⠀⠀⠀⠀⢀⡤⠈⣦⠚⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡷⠀⠀⠀⠀⠀⠀⠐⠚⠛⠁⠈⣺⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣦⡀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠞⠑⠬⣄⡀⠀⠀⠀⠀⠀⠀⣴⡿⠟⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣦⣤⣠⣤⣴⠶⠟⠋⠁⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        </pre>
+        <div class="footer-nav-links">
+          <a href="index.html">✷ Home</a>
+          <a href="works.html">✷ Works</a>
+          <a href="about.html">✷ About</a>
+          <a href="contact.html">✷ Contact</a>
+        </div>
       </div>
+
+      <!-- <ul id="footer-nav-buttons">
+        <a href="#">Instagram</a>
+        <a href="#">Email</a>
+      </ul> -->
+
+      <p id="back-to-top">
+        <a href="index.html">BACK TO THE TOP</a>
+      </p>
     </footer>
   </body>
 </html>

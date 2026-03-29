@@ -63,6 +63,10 @@ function init() {
     window.addEventListener('mousemove', (e) => {
         mouseX = (e.clientX / window.innerWidth) * 2 - 1;
         mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+
+        if (Math.random() > 0.85) {
+            spawnAsciiHeart(e.clientX, e.clientY);
+        }
     });
 
     window.addEventListener('resize', () => {
@@ -72,6 +76,48 @@ function init() {
     });
 
     animate();
+}
+
+const hearts = ["♡", "♥", "❤", "❣"];
+
+function spawnAsciiHeart(x, y) {
+    const p = document.createElement('span');
+    p.className = 'heart-particle';
+    
+    // Randomly pick an ASCII heart
+    p.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+    
+    // Initial Position
+    const size = Math.random() * 15 + 10; // 10px to 25px
+    Object.assign(p.style, {
+        left: `${x}px`,
+        top: `${y}px`,
+        fontSize: `${size}px`,
+        opacity: '1',
+        transform: `translate(-50%, -50%) rotate(${Math.random() * 30 - 15}deg)`
+    });
+
+    document.body.appendChild(p);
+
+    // Animation: Drift up and fade out
+    const driftX = (Math.random() - 0.5) * 100; // Random horizontal drift
+    const driftY = -50 - Math.random() * 100;   // Always drift up
+    
+    const animation = p.animate([
+        { 
+            transform: 'translate(-50%, -50%) scale(1) translateY(0)', 
+            opacity: 1 
+        },
+        { 
+            transform: `translate(-50%, -50%) scale(0.5) translate(${driftX}px, ${driftY}px)`, 
+            opacity: 0 
+        }
+    ], {
+        duration: 1200 + Math.random() * 800,
+        easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+    });
+
+    animation.onfinish = () => p.remove();
 }
 
 function animate() {
