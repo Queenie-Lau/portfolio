@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Queenie Lau - Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="js/audio-controller.js" defer></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="js/3d-cursor.js"></script>
+  <script src="js/magazine.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
   </head>
   <body>
     <header class="header">
@@ -94,39 +106,67 @@
         <div class="current-song">
             <p>[  CURRENTLY PLAYING — "HEART HOPE" BY OH WONDER  ]</p>
         </div>
-           <div class="sound-on">
-            <p>SOUND ON</p>
+           <div class="sound-off">
+            <p id="status-text">SOUND OFF</p>
         </div>
         <label class="switch">
-          <input type="checkbox">
+          <input type="checkbox" id="music-toggle">
           <span class="slider round"></span>
         </label>
+        <audio id="bg-music" loop>
+            <source src="songs/Oh Wonder - Heart Hope - 10 Years On (Official Audio).mp3" type="audio/mpeg">
+        </audio>
       </div>
 
       <div class="divider">
         <pre>˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖  ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪  ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖  ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖</pre>
       </div>
+<section class="featured-work">
+  <div class="featured-work-header">
+    <h2 id="explore">Explore ✷</h2>
+    <p class="hero-subtitle">CRAFTING DIGITAL & PHYSICAL EXPERIENCES THAT <br> FEEL HUMAN AND LOOK LIKE A DREAM</p>
+  </div>
 
-      <section class="featured-work">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-image"></div>
-            <h3>Project One</h3>
-            <p>A creative project that blends design and functionality</p>
-          </div>
-          <div class="project-card">
-            <div class="project-image"></div>
-            <h3>Project Two</h3>
-            <p>Innovative solutions to complex problems</p>
-          </div>
-          <div class="project-card">
-            <div class="project-image"></div>
-            <h3>Project Three</h3>
-            <p>Pushing boundaries with modern web technologies</p>
-          </div>
+  <div class="split-portfolio-container">
+    
+    <div class="volumes-container">
+      <details class="volume-item">
+        <summary>VOL 1: I DREAM IN CODE <span class="plus-icon">+</span></summary>
+        <div class="volume-content">
+          <p>Three coding experiences centered around themes of self-reflection, connection, and the bridge between digital and physical space</p>
+          <button class="view-btn" data-page="1">Open Volume 1</button>
         </div>
-      </section>
+      </details>
+
+      <details class="volume-item">
+        <summary>VOL 2: I DREAM IN PHOTO <span class="plus-icon">+</span></summary>
+        <div class="volume-content">
+          <p>A collection of ethereal imagery captured across the heart of San Diego and beyond</p>
+          <button class="view-btn" data-page="4">Open Volume 2</button>
+        </div>
+      </details>
+
+      <details class="volume-item">
+        <summary>VOL 3: I DREAM IN VIDEO <span class="plus-icon">+</span></summary>
+        <div class="volume-content">
+          <p>Cinematic shorts exploring life lessons and self reflection</p>
+          <button class="view-btn" data-page="6">Open Volume 3</button>
+        </div>
+      </details>
+    </div>
+
+    <div class="magazine-viewport">
+      <div id="magazine">
+        <div class="page" data-density="hard"><img src="assets/About.png" alt="Front Cover"></div>
+        <div class="page"><img src="assets/About.png" alt="Page 1"></div>
+        <div class="page"><img src="assets/About.png" alt="Page 2"></div>
+        <div class="page"><img src="assets/About.png" alt="Page 3"></div>
+        <div class="page" data-density="hard"><img src="assets/About.png" alt="Back Cover"></div>
+      </div>
+    </div>
+
+  </div>
+  </section>
     </main>
 
     <footer class="footer">

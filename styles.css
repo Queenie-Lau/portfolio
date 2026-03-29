@@ -26,6 +26,25 @@
     box-sizing: border-box;
 }
 
+/* Hide the real cursor globally */
+html,
+body,
+a,
+button {
+    cursor: none !important;
+}
+
+#cursor-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    /* Allows you to click "through" the heart to your links */
+    z-index: 9999;
+}
+
 :root {
     --primary-red: #AD1102;
     --secondary-white: #FFFBF7;
@@ -217,11 +236,9 @@ main {
 
 .current-song {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.7);
     font-family: var(--font-sans);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: .5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -231,8 +248,8 @@ main {
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 55px;
+    height: 20px;
 }
 
 /* Hide default HTML checkbox */
@@ -258,10 +275,10 @@ main {
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 20px;
+    width: 20px;
+    left: 0px;
+    bottom: 0px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
@@ -276,9 +293,9 @@ input:focus+.slider {
 }
 
 input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(35px);
+    -ms-transform: translateX(35px);
+    transform: translateX(35px);
 }
 
 /* Rounded sliders */
@@ -295,7 +312,12 @@ input:checked+.slider:before {
     align-items: center;
     gap: 1rem;
     justify-content: center;
-    margin-top: 1rem;
+    font-size: 0.75rem;
+}
+
+.sound-off {
+    margin: 0;
+    padding: 0;
 }
 
 .cta-buttons {
@@ -355,7 +377,7 @@ input:checked+.slider:before {
 .featured-work {
     margin-bottom: 4rem;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
-    padding-top: 2rem;
+    padding: 2rem;
 }
 
 .featured-work h2 {
@@ -636,6 +658,201 @@ input:checked+.slider:before {
     border: 1px solid rgba(255, 255, 255, 0.4);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+
+#explore {
+    font-size: 7rem;
+}
+
+#magazine {
+    /* Very soft depth shadow */
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 1. Force Smoothness & Add Spine Shadow */
+.stPageFlip-page {
+    background-color: #fff;
+    /* This adds depth where the pages meet (the spine) */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 2. Create the Glossy Finish Overlay */
+.page::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Diagonal 'light' beam that makes it look like shiny paper */
+    background: linear-gradient(115deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 48%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.1) 52%,
+            rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    /* Allows the user to still click through to turn pages */
+    z-index: 10;
+}
+
+/* Hide raw images until framework loads */
+.page {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.page img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Volumes Section Refinement */
+.split-portfolio-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    /* Keeps the list at the top */
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 4% auto;
+    padding: 0 2rem;
+}
+
+/* Constrain the left side so the magazine has room to breathe */
+.volumes-container {
+    flex: 1;
+    max-width: 450px;
+    margin-top: 0;
+    /* Reset previous margin */
+}
+
+/* Adjust the viewport to be part of the flex row */
+.magazine-viewport {
+    flex: 1.5;
+    /* Gives the book slightly more space than the text */
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible !important;
+    perspective: 3000px;
+}
+
+#magazine {
+    /* Optional: Slight tilt to give it a more "laid on a desk" feel */
+    transform: rotate(1deg);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Ensure the layout stacks on mobile */
+@media (max-width: 1024px) {
+    .split-portfolio-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .volumes-container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .magazine-viewport {
+        width: 100%;
+        min-height: 500px;
+        padding: 50px 0;
+    }
+}
+
+.volume-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.5rem 0;
+    transition: all 0.4s ease;
+}
+
+.volume-item[open] {
+    padding-bottom: 2.5rem;
+}
+
+.volume-item summary {
+    list-style: none;
+    font-family: var(--font-sans);
+    /* Pragmatica */
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.volume-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.plus-icon {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 1.5rem;
+    transition: transform 0.4s ease;
+}
+
+.volume-item[open] .plus-icon {
+    transform: rotate(45deg);
+    /* Turns + into x */
+}
+
+.volume-content {
+    padding-top: 1.5rem;
+    font-family: var(--font-sans);
+    /* Pragmatica Book */
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    text-transform: uppercase;
+    /* Soft fade-in for the text */
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.view-btn {
+    background: transparent;
+    border: 1px solid var(--text-white);
+    color: var(--text-white);
+    padding: 0.7rem 2rem;
+    margin-top: 2rem;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    border-radius: 50px;
+    /* Matches your nav links */
+    transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+    background: var(--text-white);
+    color: var(--primary-red);
 }
 
 /* Responsive Design */
