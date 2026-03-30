@@ -1,10 +1,5 @@
 /* --- GLOBAL THEME & FONTS --- */
 :root {
-    --font-serif: "Georgia", serif;
-    /* Replace with your specific serif */
-    --font-sans: "Inter", sans-serif;
-    /* Replace with your specific sans */
-    --text-white: #ffffff;
     --accent-red: #ad1102;
 }
 

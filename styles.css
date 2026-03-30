@@ -46,8 +46,8 @@ button {
 
 :root {
     --primary-red: #AD1102;
-    --secondary-white: #FFFBF7;
-    --text-white: #FFFFFF;
+    --secondary-white: #fbfaf2;
+    --text-white: #fffff5;
     --font-serif: 'Perandory';
     --font-sans: 'Pragmatica', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
@@ -218,7 +218,7 @@ main {
 
 .hero-subtitle {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-white);
     font-weight: 600;
     letter-spacing: 0;
     word-spacing: 2rem;
